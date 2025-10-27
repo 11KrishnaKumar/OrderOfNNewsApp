@@ -1,97 +1,88 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+React Native News App — Personalized News Feed
+----------------------------------------------------------------------------
 
-# Getting Started
+A cross-platform React Native News Application that displays the latest headlines by category, allows users to browse articles, and manage personalized news preferences.
+Built with modern React Hooks, TypeScript, and clean UI principles for a responsive and dynamic experience.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+----------------------------------------------------------------------------
 
-## Step 1: Start Metro
+Features ->
+-----------
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+1) Top Headlines by Category — Browse news articles by topics like Technology, Sports, Business, and more.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+2) Dynamic Category Tabs — Smooth horizontal scrolling bar that resizes dynamically on scroll.
 
-```sh
-# Using npm
-npm start
+3) User Preferences — Save favorite categories to personalize your news feed experience.
 
-# OR using Yarn
-yarn start
-```
+4) Optimized Performance — Lazy loading and optimized FlatList rendering for smooth scrolling.
 
-## Step 2: Build and run your app
+5) Local Storage — Persistent preferences using AsyncStorage.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+6) Modern UI — Clean, minimal design with dynamic animations using Animated API.
 
-### Android
 
-```sh
-# Using npm
-npm run android
+-------------------------------------------------------------------------------
 
-# OR using Yarn
-yarn android
-```
+Architecture Overview  ->
+-------------------------
 
-### iOS
+The app follows a modular architecture ensuring separation of concerns between logic, API, storage, and UI layers.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+1) API Layer --> Handles fetching articles by category --> /api/newsApi.ts
+2) Components Layer --> Reusable UI components (Cards, Tabs, Bars)  --> /components
+3) Screens Layer --> Screen-specific logic and UI (Home, Article, Preferences) --> /screens
+4) Storage Layer --> Manages user preferences & local data --> /storage/userPreferences.ts
+5) Navigation --> Centralized stack navigation --> /navigation/AppNavigator.tsx
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+---------------------------------------------------------------------------------
 
-```sh
-bundle install
-```
+State Management ->
+--------------------
 
-Then, and every time you update your native dependencies, run:
+Used React Hooks (useState, useEffect) for local state and reactivity.
+Preference state is persisted using AsyncStorage for offline access.
 
-```sh
-bundle exec pod install
-```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---------------------------------------------------------------------------------
 
-```sh
-# Using npm
-npm run ios
+Tech Stack ->
+-------------
 
-# OR using Yarn
-yarn ios
-```
+Framework	      -->   React Native (Expo or CLI)
+Language	      -->   TypeScript
+API	              -->   NewsData.io   
+State Management  -->	React Hooks
+Storage           -->	AsyncStorage
+Navigation        -->	React Navigation (Stack)
+UI Animations     -->   React Native Animated API
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---------------------------------------------------------------------------------
 
-## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
+Challenges Encountered ->
+-------------------------
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Handling inconsistent API responses (e.g., results undefined for some categories).
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Implementing smooth category bar resize animations during scroll.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+Persisting preferences while keeping UI reactive.
 
-## Congratulations! :tada:
+Managing async storage sync between screens.
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+-----------------------------------------------------------------------------------
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+Installation & Setup ->
+------------------------
 
-# Troubleshooting
+git clone
+npm install
+npx react-native run-android
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+------------------------------------------------------------------------------------
 
-To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
